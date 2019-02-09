@@ -1,0 +1,63 @@
+﻿@using BlazorCrud.Shared.Models
+@page "/fetchuser"
+@inject HttpClient Http
+
+<h1>User Vehicle Data</h1>
+
+<p>This component demonstrates fetching User data from the server.</p>
+
+<p>
+    <a href="/adduser">Create New</a>
+</p>
+
+@if (userList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Vehicle</th>
+                <th>Phone Number</th>
+                <th>Vehicle</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var all in userList)
+            {
+            <tr>
+                <td>@all.Fullname</td>
+                <td>@all.Email</td>
+                <td>@all.Address</td>
+                <td>@all.City</td>
+                <td>@all.Vname</td>
+                <td>@all.PhoneNumber</td>
+                <td><a href='http://www.jdpower.com/cars/@all.Vname/@all.Vmodel/@all.Vyear'>Vehicle</a></td>
+                <td>
+                    <a href='/edituser/@all.userID'>Edit</a>  |
+                    <a href='/delete/@all.userID'>Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions {
+User[] userList;
+
+protected override async Task OnInitAsync()
+{
+    userList = await Http.GetJsonAsync<User[]>
+    ("/api/User/Index");
+}
+
+}
