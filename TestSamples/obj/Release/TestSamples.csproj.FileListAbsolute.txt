@@ -1,0 +1,14 @@
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\TestSamples.exe.config
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\TestSamples.exe
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\TestSamples.pdb
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\nunit.framework.dll
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\WebDriver.dll
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\WebDriver.Support.dll
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\nunit.framework.pdb
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\nunit.framework.xml
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\WebDriver.xml
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\bin\Release\WebDriver.Support.xml
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\obj\Release\TestSamples.csproj.CoreCompileInputs.cache
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\obj\Release\TestSamples.csproj.CopyComplete
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\obj\Release\TestSamples.exe
+C:\Users\Uguralp\Desktop\Q&A_Assignment4\BlazorCrud\TestSamples\obj\Release\TestSamples.pdb

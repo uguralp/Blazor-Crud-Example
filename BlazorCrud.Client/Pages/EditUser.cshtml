@@ -1,0 +1,77 @@
+﻿@using BlazorCrud.Shared.Models
+@page "/edituser/{userID}"
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+<h2>Edit</h2>
+<h4>Employees</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="Fullname" class="control-label">Fullname</label>
+                <input for="Fullname" class="form-control" bind="@usr.Fullname" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input for="Email" class="form-control" bind="@usr.Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Address</label>
+                <input asp-for="Address" class="form-control" bind="usr.Address" />
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label">City</label>
+                <input asp-for="City" class="form-control" bind="usr.City" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="Phone Number" class="form-control" bind="usr.PhoneNumber" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vname" class="control-label">Vehicle Name</label>
+                <input asp-for="Vname" class="form-control" bind="usr.Vname" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vmodel" class="control-label">Vehicle Model</label>
+                <input asp-for="Vmodel" class="form-control" bind="usr.Vmodel" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vyear" class="control-label">Vehicle Year</label>
+                <input asp-for="Vyear" class="form-control" bind="usr.Vyear" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" onclick="@(async () => await UpdateUser())" class="btn btn-default" />
+                <input type="submit" value="Cancel" onclick="@cancel" class="btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@functions {
+
+[Parameter]
+string userID { get; set; }
+
+User usr = new User();
+
+protected override async Task OnInitAsync()
+{
+    usr = await Http.GetJsonAsync<User>("/api/User/Details/" + Convert.ToInt32(userID));
+}
+
+protected async Task UpdateUser()
+{
+    await Http.SendJsonAsync(HttpMethod.Put, "api/User/Edit", usr);
+    UriHelper.NavigateTo("/fetchuser");
+
+}
+
+void cancel()
+{
+    UriHelper.NavigateTo("/fetchuser");
+
+}
+
+}
